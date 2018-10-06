@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Busca por Nome</title>
+	
+    
+	<script src="js/jquery.js"></script>
+	
+
+	<link href="css/bootstrap.min.css" rel=stylesheet>
+	
+	
+	<script>
+		$(document).ready(function(){
+			
+
+			$("#busca").click(function() {
+
+				var nome = $("#comentario").val();
+				
+					
+				$("#dadosCharuto").empty();
+					
+				var url = "/charuto/"+nome;
+				
+					
+
+				$.getJSON(url, function(data) {
+						
+						var itens = [];
+						
+						
+						
+						itens.push("<tr> <td>"+ data.nome +"</td><td>"+ data.fabricante + "</td><td>"+ data.fortaleza + "</td><td>"+ data.bitola + "</td><td>"+ data.nacionalidade + "</td><td>" + data.comentario + "</td></tr>");
+							
+						
+									
+						$("#dadosCharuto").append(itens);
+						
+				});
+
+			});
+
+		});
+
+	</script>
+
+   
+  </head>
+
+
+  <body>
+		
+
+  		<div id="painelBusca">
+            
+		
+		
+        <input id="nome" class="form-control col-md-offset-5" type="text" placeholder="Default input">
+		
+		<button id="busca" class="btn btn-success col-md-offset-5">Buscar</button>
+		
+		<table class="table table-bordered"> 
+			<caption>Charutos</caption>
+				<thead>
+					<tr> 
+						<th>Nome</th>
+						<th>Fabricante</th> 
+						<th>Fortaleza</th> 
+						<th>Bitola</th> 
+						<th>Nacionalidade</th> 
+					</tr> 
+				</thead> 
+				
+				<tbody id="dadosCharuto"> 
+					
+				</tbody> 
+		</table>
+
+		
+  </body>
+  
+</html>
