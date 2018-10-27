@@ -24,7 +24,7 @@
 				
 				$("#dadosCharuto").empty();
 					
-				var url = "/charuto/"+nome+"/"+fabricante+"/"+nacionalidade+"";
+				var url = "/charuto/"+nome+"/"+fabricante+"/"+nacionalidade;
 					
 
 				$.getJSON(url, function(data) {
@@ -32,7 +32,8 @@
 						var itens = [];
 						
 						$.each(data, function(i){
-						
+							
+							
 							itens.push("<tr> <td>"+ this.nome +"</td><td>"+ this.fabricante + "</td><td>"+ this.nacionalidade +"</td></tr>");
 							
 						});
@@ -87,9 +88,9 @@
                 <label>Nacionalidade</label>
                 <select id="nacionalidade" class="input-large form-control">
                     <option value="" selected="selected">Escolha a nacionalidade</option>
-                    <option value="Brasileiro">brasileiro</option>
-                    <option value="Cubano">cubano</option>
-                    <option value="Hondurenho">hondurenho</option>
+                    <option value="Brasileiro">Brasileiro</option>
+                    <option value="Cubano">Cubano</option>
+                    <option value="Hondurenho">Hondurenho</option>
                     
                 </select>
             </div>
@@ -104,8 +105,6 @@
 					<tr> 
 						<th>Nome</th>
 						<th>Fabricante</th> 
-						<th>Fortaleza</th> 
-						<th>Bitola</th>
 						<th>Nacionalidade</th>  
 					</tr> 
 				</thead> 

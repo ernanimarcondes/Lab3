@@ -4,57 +4,15 @@ package hello;
 import java.util.List;
 import java.util.LinkedList;
 
+import com.db4o.ObjectSet;
+import com.db4o.query.Query;
+import com.db4o.Db4oEmbedded;
+import com.db4o.ObjectContainer;
+
 public class Model {
 	
-	private List<Charuto> charutos = new LinkedList<Charuto>();
-
-	
-	public void addCharuto(Charuto charuto){
-		charutos.add(charuto);
-	}
-	
-
-	//1
-	
-	public List<Charuto> buscarNome(String nome){
-		List<Charuto> charutosEncontrados = new LinkedList<Charuto>();
-		for(Charuto charuto:charutos) {
-			if(charuto.getNome().equals(nome)) charutosEncontrados.add(charuto);
-		}
-		return charutosEncontrados;
-	}
-	
-	public List<Charuto> buscarFabricante(String fabricante){
-		List<Charuto> charutoEncontrados = new LinkedList<Charuto>();
-		for(Charuto charuto:charutos) {
-			if(charuto.getFabricante().equals(fabricante)) charutoEncontrados.add(charuto);
-		}
-		return charutoEncontrados;
-	}
-	
-	public List<Charuto> buscarFortaleza(String fortaleza){
-		List<Charuto> charutoEncontrados = new LinkedList<Charuto>();
-		for(Charuto charuto:charutos) {
-			if(charuto.getFortaleza().equals(fortaleza)) charutoEncontrados.add(charuto);
-		}
-		return charutoEncontrados;
-	}
-	
-	public List<Charuto> buscarNacionalidade(String nacionalidade){
-		List<Charuto> charutoEncontrados = new LinkedList<Charuto>();
-		for(Charuto charuto:charutos) {
-			if(charuto.getNacionalidade().equals(nacionalidade)) charutoEncontrados.add(charuto);
-		}
-		return charutoEncontrados;
-	}
-	
-	public List<Charuto> buscarBitola(String bitola){
-		List<Charuto> charutoEncontrados = new LinkedList<Charuto>();
-		for(Charuto charuto:charutos) {
-			if(charuto.getBitola().equals(bitola)) charutoEncontrados.add(charuto);
-		}
-		return charutoEncontrados;
-	}
+	//private List<Charuto> charutos = new LinkedList<Charuto>();
+	ObjectContainer Charuto = Db4oEmbedded.openFile(Db4oEmbedded.newConfiguration(), "bd/Charuto.db4o");
 	
 	public List<Charuto> buscarCharuto(String nome, String fabricante, String nacionalidade){
 		List<Charuto> charutoEncontrados = new LinkedList<Charuto>();
