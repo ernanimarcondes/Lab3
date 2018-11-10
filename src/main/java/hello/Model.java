@@ -11,20 +11,31 @@ import com.db4o.ObjectContainer;
 
 public class Model {
 	
-	//private List<Charuto> charutos = new LinkedList<Charuto>();
-	ObjectContainer Charuto = Db4oEmbedded.openFile(Db4oEmbedded.newConfiguration(), "bd/Charuto.db4o");
+	ObjectContainer charutos = Db4oEmbedded.openFile(Db4oEmbedded.newConfiguration(), "bd/Charuto.db4o");
+	
+	
+	public void addCharuto(Charuto charuto) {
+		charutos.store(charuto);
+		charutos.commit();
+	}
 	
 	public List<Charuto> buscarCharuto(String nome, String fabricante, String nacionalidade){
+		Query query = charutos.query();
+		query.constrain(Charuto.class);
+		ObjectSet<Charuto> todosCharutos = query.execute();
 		List<Charuto> charutoEncontrados = new LinkedList<Charuto>();
-		for(Charuto charuto:charutos) {
+		for(Charuto charuto:todosCharutos) {
 			if(charuto.getNome().equals(nome) && charuto.getFabricante().equals(fabricante) && charuto.getNacionalidade().equals(nacionalidade)) charutoEncontrados.add(charuto);
 		}
 		return charutoEncontrados;
 	}
 	
-	
 	public List<Charuto> getCharutos(){
-		return charutos;
+		Query query = charutos.query();
+		query.constrain(Charuto.class);
+		List<Charuto> todosCharutos = query.execute();
+		
+		return todosCharutos;
 	}
-
+	
 }

@@ -45,12 +45,5 @@ public class Charuto {
 		this.comentario = comentario;
 	}
 
-	public boolean comparar(Charuto charut){
-		if(nome.equals(charut.nome) && fabricante.equals(charut.fabricante) && fortaleza.equals(charut.fortaleza) && bitola.equals(charut.bitola) && nacionalidade.equals(charut.nacionalidade)) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-	
 }
+	
