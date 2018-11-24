@@ -34,7 +34,7 @@
 						$.each(data, function(i){
 							
 							
-							itens.push("<tr> <td>"+ this.nome +"</td><td>"+ this.fabricante + "</td><td>"+ this.nacionalidade +"</td></tr>");
+							itens.push("<tr> <td>"+ this.nome +"</td><td>"+ this.fabricante + "</td><td>"+ this.fortaleza +"</td><td>"+ this.bitola +"</td><td>"+ this.nacionalidade +"</td><td>"+ this.comentario +"</td><td>"+" <img src =" + this.ibagem +" />" +"</td></tr>");
 							
 						});
 									
@@ -65,8 +65,9 @@
                     <option value="" selected="selected">Escolha o nome</option>
                     <option value="Corona">Corona</option>
                     <option value="Gran Corona">Gran Corona</option>
+                    <option value="Toro">Toro</option>
                     <option value="Churchill">Churchill</option>
-                    <option value="Criollo">Criollo</option>
+                    <option value="Criollo">Criollo Lunch Break</option>
                     
                 </select>
             </div>
@@ -77,8 +78,9 @@
                 <select id="fabricante" class="input-large form-control">
                     <option value="" selected="selected">Escolha o fabricante</option>
                     <option value="Dona Flor">Dona Flor</option>
-                    <option value="Romeo y Julieta">romeoYJulieta</option>
-                    <option value="Gran Honduras">granHonduras</option>
+                    <option value="Dannemann">Dannemann</option>
+                    <option value="Romeo y Julieta">Romeo y Julieta</option>
+                    <option value="Gran Honduras">Gran Honduras</option>
                     
                 </select>
             </div>		
@@ -105,7 +107,10 @@
 					<tr> 
 						<th>Nome</th>
 						<th>Fabricante</th> 
+						<th>Fortaleza</th>
+						<th>Bitola</th>
 						<th>Nacionalidade</th>  
+						<th>Comentário</th>
 					</tr> 
 				</thead> 
 				
@@ -114,6 +119,8 @@
 				</tbody> 
 		</table>
 
+
+		
 		
   </body>
   

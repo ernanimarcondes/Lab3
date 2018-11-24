@@ -8,16 +8,18 @@ public class Charuto {
 	private String bitola;
 	private String nacionalidade;
 	private String comentario;
+	private String ibagem;
 	
 	
 
-	public Charuto(String nome, String fabricante, String fortaleza, String bitola, String nacionalidade, String comentario){
+	public Charuto(String nome, String fabricante, String fortaleza, String bitola, String nacionalidade, String comentario, String ibagem){
 		this.nome = nome;
 		this.fabricante = fabricante;
 		this.fortaleza = fortaleza;
 		this.bitola = bitola;
 		this.nacionalidade = nacionalidade;
 		this.comentario = comentario;
+		this.ibagem = ibagem;
 	}
 	
 	public String getNome(){
@@ -43,6 +45,14 @@ public class Charuto {
 
 	public void setComentario(String comentario) {
 		this.comentario = comentario;
+	}
+
+	public String getIbagem() {
+		return ibagem;
+	}
+
+	public void setIbagem(String ibagem) {
+		this.ibagem = ibagem;
 	}
 
 }
